@@ -9,6 +9,7 @@ import { iJSONresponse, iPost } from '../../Modules/i-post';
 export class HomeComponent implements OnInit {
   featuredPost!: iPost; //post in evidenza
   postArr: iPost[] = []; //tutti post
+
   ngOnInit(): void {
     fetch('db.json')
       .then((res) => {
@@ -30,6 +31,7 @@ export class HomeComponent implements OnInit {
               }
               return array;
             };
+
             this.postArr.push(post);
             this.postArr = shuffle(this.postArr);
             this.postArr = this.postArr.slice(0, 4);
