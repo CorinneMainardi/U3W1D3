@@ -1,1 +1,11 @@
-<p>post-detail works!</p>
+<div>
+  <div class="card-body">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <p class="card-text">{{ post.body }}</p>
+    <ul>
+      <li *ngFor="let tag of post.tags" class="" list-group-item->
+        {{ tag }}
+      </li>
+    </ul>
+  </div>
+</div>

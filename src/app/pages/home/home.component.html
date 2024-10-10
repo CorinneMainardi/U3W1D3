@@ -7,7 +7,7 @@
         {{ tag }}
       </li>
     </ul>
-    <a href="#" class="btn btn-primary">Scopri</a>
+    <button>Dettaglio</button>
   </div>
 </div>
 
@@ -19,13 +19,15 @@
       <div class="col-12 col_md-4">
         <div class="card-body">
           <h5 class="card-title">{{ post.title }}</h5>
-          <p class="card-text">{{ post.body }}</p>
+          <!-- <p class="card-text">{{ post.body }}</p> -->
           <ul>
             <li *ngFor="let tag of post.tags" class="" list-group-item->
               {{ tag }}
             </li>
           </ul>
-          <a href="#" class="btn btn-primary">Scopri</a>
+          <button [routerLink]="['/post-detail', post.id]" class="btn btn-info">
+            Dettaglio
+          </button>
         </div>
       </div>
     </ng-container>
